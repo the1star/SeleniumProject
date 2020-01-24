@@ -13,14 +13,22 @@ public class LoginPOM {
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(id="login")
+	@FindBy(xpath="//input[@id='cyclosUsername']")
 	private WebElement userName; 
 	
-	@FindBy(id="password")
+    @FindBy(id="cyclosPassword")
 	private WebElement password;
+
 	
-	@FindBy(id="formLogin_submitAuth")
+/*	driver.findElement(By.name("q")).sendKeys("Divyakant sharma");
+	Actions act=new Actions(driver);
+	act.sendKeys(Keys.ENTER).perform();
+	*/
+	@FindBy(xpath="//div[@id='virtualKeyboard']//div//input[@class='button']") 
 	private WebElement loginBtn; 
+	
+	
+	
 	
 	public void sendUserName(String userName) {
 		this.userName.clear();
